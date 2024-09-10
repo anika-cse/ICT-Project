@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- navbar starts -->
+<nav class="navbar navbar-expand-lg navbar-light bg-info py-0">
+    <div class="container">
+      <a class="navbar-brand py-0" href="index.html">
+        <img src="images/logo.jpg" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-uppercase oswald-reg fs-16 text-white" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="about-us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="empty-portfolio-list-page.html">Portfolios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="dividend-calculator-page.html">Dividends</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="logindetail.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="contact.html">Contact Us</a>
+          </li>
+        
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+<!-- navbar ends -->
+
+<!-- banner starts -->
+
+<section id="banner">
+    <div class="banner-slider">
+        <div class="banner-item bg7">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 m-auto">
+                        <div class="banner-content text-center">
+                            <div class="banner-text">
+                                <h2 class="mb-0 oswald-bold fs-40 text-uppercase text-white">Welcome to Create Your New Portfolio Tracker</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+  </section>
+  
+  <!-- banner ends -->
+
+<!-- Create-Portfolio Page starts -->
+
+<section id="create-portfolio">
+    <div class="container mt-5">
+        <h2 class="mb-4 oswald-bold">Create New Portfolio</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <form id="portfolioForm">
+
+                    <!-- Step 1: Portfolio Details here -->
+                    <div class="step" id="step1">
+                        <div class="mb-3">
+                            <label for="portfolioName" class="form-label oswald-bold">Portfolio Name</label>
+                            <input type="text" class="form-control" id="portfolioName" placeholder="Enter portfolio name">
+                            <small class="help-text fs-13">Give your portfolio a unique and descriptive name.</small>
+                        </div>
+                        <button type="button" class="btn btn-primary next-step">Next</button>
+                    </div>
+
+                    <!-- Step 2: Add Shares here -->
+                    <div class="step" id="step2" style="display:none;">
+                        <div id="sharesContainer">
+                            <div class="share-card card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Share Details</h5>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="shareName" class="form-label">Share Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter share name">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="purchasePrice" class="form-label">Purchase Price</label>
+                                            <input type="number" class="form-control" placeholder="Enter purchase price">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="purchaseDate" class="form-label">Date of Purchase</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-4">
+                                            <label for="amount" class="form-label">Amount</label>
+                                            <input type="number" class="form-control" placeholder="Enter amount">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="dividendYield" class="form-label">Upcoming Dividend Yield</label>
+                                            <input type="number" class="form-control" placeholder="Enter dividend yield">
+                                        </div>
+                                        <div class="col-md-4 d-flex align-items-end">
+                                            <button type="button" class="btn btn-outline-danger remove-share">Remove</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-secondary" id="addShareBtn">Add Share</button>
+                        <button type="button" class="btn btn-primary next-step">Next</button>
+                        <button type="button" class="btn btn-outline-secondary prev-step">Back</button>
+
+                    </div>
+
+                    <!-- Step 3: Review and Save your share-->
+                    <div class="step" id="step3" style="display:none;">
+                        <h5>Review Your Portfolio Details</h5>
+                        <div id="reviewContainer"></div>
+                        <button type="submit" class="btn btn-success">Save Portfolio</button>
+                        <button type="button" class="btn btn-outline-secondary prev-step">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Create_Portfolio Page ends -->
+
+<!-- footer starts -->
+
+<section id="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 m-auto">
+              <div class="footer-bottom">
+                  <p class="mb-0 open-reg fs-14 text-center">Copyright &copy; 2024 All rights reserved by <span>SPT</span>.</p>
+              </div>
+            </div>
+      </div>
+  </div>
+</section>
+
+<!-- footer ends -->
+
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

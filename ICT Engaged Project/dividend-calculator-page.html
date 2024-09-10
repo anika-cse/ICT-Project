@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- navbar starts -->
+<nav class="navbar navbar-expand-lg navbar-light bg-info py-0">
+    <div class="container">
+      <a class="navbar-brand py-0" href="index.html">
+        <img src="images/logo.jpg" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-uppercase oswald-reg fs-16 text-white" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="about-us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="empty-portfolio-list-page.html">Portfolios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="dividend-calculator-page.html">Dividends</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="logindetail.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-uppercase oswald-reg fs-16 text-white" href="contact.html">Contact Us</a>
+          </li>
+        
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+<!-- navbar ends -->
+
+<!-- dividend calculator page starts -->
+
+<section id="divi-cal-page">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <!-- Dividend Calculator part -->
+        <div class="col-lg-8 mb-4">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="mb-0 oswald-reg fs-25">Dividend Calculator</h3>
+              </div>
+              <div class="card-body">
+                <form id="divid-cal-form">
+                  <div class="mb-3">
+                    <label for="initial-capital" class="form-label oswald-reg fs-16">Initial Capital:</label>
+                    <input type="number" id="initial-capital" class="form-control" placeholder="Enter initial capital">
+                  </div>
+                  <div class="mb-3">
+                    <label for="share-name" class="form-label oswald-reg fs-16">Share Name:</label>
+                    <input type="text" id="share-name" class="form-control" placeholder="Enter share name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="lookback-period" class="form-label oswald-reg fs-16">Lookback Period:</label>
+                    <select id="lookback-period" class="form-select">
+                      <option value="1-year">1 year</option>
+                      <option value="2-years">2 years</option>
+                      <option value="5-years">5 years</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="calculation-period" class="form-label oswald-reg fs-16">Calculation Period:</label>
+                    <select id="calculation-period" class="form-select">
+                      <option value="6-months">6 months</option>
+                      <option value="1-year">1 year</option>
+                      <option value="2-years">2 years</option>
+                    </select>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="cta-btn">Calculate</button>
+                    <a href="Dividend Calculator Reports Page.html"><button type="button" class="cta-btn">Generate Report</button></a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+           <!-- Dividend Payment Details Section -->
+        <div class="col-lg-8">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="mb-0 oswald-reg fs-22">Dividend Payment Details</h3>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <p class="oswald-reg fs-16">Payment Date:0</p>
+                  <p class="oswald-reg fs-16">Dividend Yield:0</p>
+                  <p class="oswald-reg fs-16">Payment Amount:0</p>
+                </div>
+                <div class="mb-3">
+                  <p class="oswald-reg fs-16">Payment Date: 0</p>
+                  <p class="oswald-reg fs-16">Dividend Yield: 0</p>
+                  <p class="oswald-reg fs-16">Payment Amount: 0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- dividend calculator page ends -->
+
+
+<!-- footer starts -->
+
+<section id="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 m-auto">
+              <div class="footer-bottom">
+                  <p class="mb-0 open-reg fs-14 text-center">Copyright &copy; 2024 All rights reserved by <span>SPT</span>.</p>
+              </div>
+            </div>
+      </div>
+  </div>
+</section>
+
+<!-- footer ends -->
+
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
