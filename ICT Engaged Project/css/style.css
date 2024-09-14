@@ -404,7 +404,8 @@ padding-top: 20px;
 
 
 #footer{
-    background: var(--cl7);
+    
+    background: var(--cl7);    
 }
 
 #footer .footer-bottom p{
@@ -620,6 +621,11 @@ span{
     margin-bottom: 160px;
 }
 
+.detail-cal-report-content-section{
+    min-height: 39vh;
+    padding-bottom: 30px;
+}
+
 .report-item {
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -635,7 +641,8 @@ span{
     -ms-transition: all linear 0.4s;
     -o-transition: all linear 0.4s;
 }
-  .report-item:hover {
+
+.report-item:hover {
     background-color: #f1f1f1;
   }
 
@@ -649,6 +656,31 @@ span{
     margin-bottom: 75px;
   }
 
+  .divi-cal-rep-detail-content-section{
+    min-height: 62vh;
+    padding-bottom: 30px;
+  }
+
+  .divi-cal-detail-report-item{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all linear 0.4s;
+    -webkit-transition: all linear 0.4s;
+    -moz-transition: all linear 0.4s;
+    -ms-transition: all linear 0.4s;
+    -o-transition: all linear 0.4s;
+}
+
+.divi-cal-detail-report-item:hover {
+    background-color: #f1f1f1;
+  }
+
   /* #details-section {
     display: none;
   } */
@@ -660,6 +692,11 @@ span{
 #post-list-page{
     margin-top: 62px;
     margin-bottom: 62px;
+}
+
+.port-content-section {
+    min-height: 66vh;
+    padding-bottom: 30px;
 }
 
 .portfolio-item {
