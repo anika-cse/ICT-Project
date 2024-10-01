@@ -274,6 +274,10 @@ document.querySelectorAll('.next-step').forEach(button => {
             currentStep.style.display = 'none';
             nextStep.style.display = 'block';
             updateProgressBar(nextStep);
+
+            if (nextStep.id === 'step3') {
+                updateReviewSection();
+            }
         }
     });
 });
@@ -292,6 +296,7 @@ document.querySelectorAll('.prev-step').forEach(button => {
 
 document.getElementById('addShareBtn').addEventListener('click', function() {
     const shareCard = document.querySelector('.share-card').cloneNode(true);
+    shareCard.querySelectorAll('input').forEach(input => input.value = '');
     document.getElementById('sharesContainer').appendChild(shareCard);
 });
 
@@ -307,6 +312,68 @@ function updateProgressBar(step) {
     const progress = ((stepIndex + 1) / steps.length) * 100;
     document.querySelector('.progress-bar').style.width = `${progress}%`;
 }
+
+function updateReviewSection() {
+    const portfolioName = document.getElementById('portfolioName').value;
+    const shareCards = document.querySelectorAll('.share-card');
+
+    let reviewHTML = `<h5>Portfolio Name: ${portfolioName}</h5><hr/>`;
+
+    shareCards.forEach((card, index) => {
+        const shareName = card.querySelector('input[placeholder="Enter share name"]').value;
+        const purchasePrice = card.querySelector('input[placeholder="Enter purchase price"]').value;
+        const purchaseDate = card.querySelector('input[type="date"]').value;
+        const quantity = card.querySelector('input[placeholder="Enter Quantity"]').value;
+        const dividendYield = card.querySelector('input[placeholder="Enter dividend yield"]').value;
+
+        reviewHTML += `
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Share ${index + 1}</h5>
+                    <p>Share Name: ${shareName}</p>
+                    <p>Purchase Price: ${purchasePrice}</p>
+                    <p>Purchase Date: ${purchaseDate}</p>
+                    <p>Quantity: ${quantity}</p>
+                    <p>Upcoming Dividend Yield: ${dividendYield}</p>
+                </div>
+            </div>
+        `;
+    });
+
+    document.getElementById('reviewContainer').innerHTML = reviewHTML;
+}
+
+// Change to prevent form submission when press on Enter key
+document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+        }
+    });
+});
+
+// Handle form submission
+document.getElementById('portfolioForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Alert give without validation
+    alert('Portfolio saved successfully!');
+    this.reset();
+    
+    // Remove all share cards except the first one
+    const sharesContainer = document.getElementById('sharesContainer');
+    while (sharesContainer.children.length > 1) {
+        sharesContainer.removeChild(sharesContainer.lastChild);
+    }
+
+    // Clear the first share card inputs
+    sharesContainer.querySelectorAll('input').forEach(input => input.value = '');
+
+    // Go back to step 1
+    document.getElementById('step1').style.display = 'block';
+    document.getElementById('step2').style.display = 'none';
+    document.getElementById('step3').style.display = 'none';
+    updateProgressBar(document.getElementById('step1'));
+});
 
 
 
